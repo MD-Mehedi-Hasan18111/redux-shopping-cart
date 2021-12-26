@@ -6,7 +6,7 @@ const SingleProduct = ({ product, handleCart }) => {
 
   return (
     <Col lg={4} md={6} xs={12}>
-      <Card style={{ width: "18rem", height: "100%", boxShadow: "0 10px 10px gray" }}>
+      <Card style={{ width: "18rem", margin: "0 auto", height: "100%", boxShadow: "0 10px 10px gray"}}>
         <Card.Img variant="top" style={{width: "40%", height: "140px", margin: "10px auto"}} src={image} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>

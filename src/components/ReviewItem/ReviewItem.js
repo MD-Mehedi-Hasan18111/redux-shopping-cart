@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const ReviewItem = ({ productItem, handleRemove }) => {
     
-    const { id, image, title, price, description } = productItem;
+    const { id, image, title, price, description, quantity } = productItem;
 
     return (
         <Col lg={12}>
@@ -17,6 +17,7 @@ const ReviewItem = ({ productItem, handleRemove }) => {
                             <Col lg={8} className="product-description">
                                 <h4>{title}</h4>
                                 <h5>$ {price}</h5>
+                                <h5>Quantity: {quantity}</h5>
                                 <p style={{textAlign: "justify"}}>{ description}</p>
                             </Col>
                         </Row>

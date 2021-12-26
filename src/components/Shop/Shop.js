@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './Shop.css';
+import "./Shop.css";
 import { Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, setProducts } from "../../redux/action/productAction";
@@ -7,7 +7,7 @@ import SingleProduct from "../SingleProduct/SingleProduct";
 
 const Shop = () => {
   const products = useSelector((state) => state.allProducts.allProducts);
-  // const cart = useSelector((state) => state.allProducts.cart);
+  const cart = useSelector((state) => state.allProducts.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,11 +17,12 @@ const Shop = () => {
   }, []);
 
   const handleCart = (product) => {
+    product.quantity = 1;
     dispatch(addToCart(product));
-  }
+  };
 
   return (
-    <div className="my-5">
+    <div style={{marginTop: "100px"}}>
       <Container>
         {!products.length ? (
           <div className="loader">
@@ -33,7 +34,11 @@ const Shop = () => {
         ) : (
           <Row className="g-5">
             {products?.map((product) => (
-              <SingleProduct key={product.id} handleCart={handleCart} product={product} />
+              <SingleProduct
+                key={product.id}
+                handleCart={handleCart}
+                product={product}
+              />
             ))}
           </Row>
         )}
