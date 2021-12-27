@@ -15,10 +15,10 @@ const ReviewItem = ({ productItem, handleRemove }) => {
                                <img style={{width: "170px", height: "200px"}} src={image} alt="productImage" />
                             </Col>
                             <Col lg={8} className="product-description">
-                                <h4>{title}</h4>
+                                <h4 className='mt-2'>{title}</h4>
                                 <h5>$ {price}</h5>
                                 <h5>Quantity: {quantity}</h5>
-                                <p style={{textAlign: "justify"}}>{ description}</p>
+                                <p>{ description}</p>
                             </Col>
                         </Row>
                     </Col>
